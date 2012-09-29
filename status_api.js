@@ -37,7 +37,9 @@ StatusAPI.prototype.stop = function() {
 StatusAPI.prototype.check = function() {
     var self = this;
     request( { url: this.api_url, json: true }, function( err, resp, body ) {
-        self.check_status( body );
+        if( !error ) {
+            self.check_status( body );
+        }
     });
 };
 

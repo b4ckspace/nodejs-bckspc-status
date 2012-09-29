@@ -36,7 +36,7 @@ StatusAPI.prototype.stop = function() {
 
 StatusAPI.prototype.check = function() {
     var self = this;
-    request( { url: this.api_url, json: true }, function( err, resp, body ) {
+    request( { url: this.api_url, json: true }, function( error, resp, body ) {
         if( !error ) {
             self.check_status( body );
         }

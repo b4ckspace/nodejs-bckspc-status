@@ -13,7 +13,8 @@ var StatusAPI = function( url, interval ) {
     this.last_member_count  = 0;
     this.last_members       = new sets.Set();
 
-    this.update_interval    = interval || 60*1000;
+    this.update_interval    = (interval || 60)* 1000;
+
     this.interval           = false;
 
     this.start();

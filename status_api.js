@@ -82,3 +82,4 @@ StatusAPI.prototype.check_status = function( data ) {
     
 };
 
+module.exports = StatusAPI;

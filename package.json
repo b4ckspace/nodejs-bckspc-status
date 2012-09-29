@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "author": "schinken <schinken@hackerspace-bamberg.de>",
     "description": "simple event wrapper for the backspace status api",
-    "main": "warpcore",
+    "main": "status_api",
     "contributors": [
         {
             "name": "schinken",

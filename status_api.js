@@ -10,7 +10,7 @@ var StatusAPI = function( url, interval ) {
     
     this.api_url            = url || 'http://status.bckspc.de/status.php?response=json';
  
-    this.last_member_count  = 0;
+    this.last_member_count  = null;
     this.last_members       = new sets.Set();
 
     this.update_interval    = (interval || 60)* 1000;

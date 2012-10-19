@@ -56,7 +56,7 @@ StatusAPI.prototype.check_status = function( data ) {
     }
 
     // Check if member count has changed from zero (someone's entered the space)
-    if( data.members != 0 && this.last_member_count == 0 ) {
+    if( data.members != 0 && !this.last_member_count ) {
         this.emit('space_opened', data.members, data );    
     }
 

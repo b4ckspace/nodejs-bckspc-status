@@ -37,7 +37,7 @@ StatusAPI.prototype.stop = function() {
 StatusAPI.prototype.check = function() {
     var self = this;
     request( { url: this.api_url, json: true }, function( error, resp, body ) {
-        if( !error ) {
+        if( !error && resp.statusCode == 200 ) {
             self.check_status( body );
         }
     });
@@ -62,9 +62,11 @@ StatusAPI.prototype.check_status = function( data ) {
 
     // Squeeze member nicknames in another format
     var member_set = new sets.Set();
-    data.members_present.forEach( function( val ){
-        member_set.add( val.nickname );
-    });
+    if(data.members_present){
+        data.members_present.forEach( function( val ){
+            member_set.add( val.nickname );
+        });
+    }
 
 
     // Check if members joined or left the space
